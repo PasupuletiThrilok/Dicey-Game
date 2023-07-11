@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dicey</title>
+  </head>
+  <body>
+    <main>
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">0</p>
+        <p class="victory" id="victory--0">VICTORY!</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--0">0</p>
+        </div>
+      </section>
+      <section class="player player--1">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">0</p>
+        <p class="victory" id="victory--1">VICTORY!</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--1">0</p>
+        </div>
+      </section>
+
+      <img src="dice-5.png" alt="Playing dice" class="dice" />
+      <button class="btn btn--new" id="new--game">🔄 New game</button>
+      <button class="btn btn--instruc" id="instruc">📝 Instructions</button>
+      <button class="btn btn--roll" id="roll">🎲 Roll dice</button>
+      <button class="btn btn--hold" id="hold">📥 Hold</button>
+    </main>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1 class="header">📝 INSTRUCTIONS</h1>
+      <br>
+        Welcome to Dicey!!! This is a 1v1 dice game, where the two players battle their lucks out to victory!!!
+        <br>
+        <br>
+        <br>
+        <h3>CONTROLS:</h3>
+        <br>🎲 ROLL DICE -> A random dice roll that gives any number between 1 and 6 (both inclusive).
+        <br>📥 HOLD -> Hold the current score and end your turn.
+        <br>🔄 NEW GAME -> Reset the scores and start a new game.
+        <br><br><br>
+        <h3>HOW TO PLAY:</h3>
+        <br>1. Every 'ROLL' increases your 'CURRENT SCORE' by the amount you have rolled. <br>2. You can keep `ROLL`ing till you either `HOLD` your score or `ROLL` a `1`. <br>3. For ease of keeping track of turns, the current active player will have a more opaque screen and bolder fonts.<br>4. Note, that your current score does not add to your actual / global score unless you `HOLD`. <br> 5. Your `CURRENT` score will go to zero once you `ROLL` a `1`, so you better `HOLD` at the right time. <br> 6. The first player to reach a score of 100, wins the game. 
+        <br>
+        <br />Enjoy my other game 
+        <a class="link" href="https://moonman369.github.io/Guess-What/"
+          >Guess What</a
+        >
+      </p>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

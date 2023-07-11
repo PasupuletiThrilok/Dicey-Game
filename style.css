@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #9e08c4d7 0%, #bd732e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(150px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+}
+
+.player {
+  flex: 60%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 1s;
+}
+
+/* ELEMENTS */
+.name {
+  position: relative;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #490085;
+  margin-bottom: auto;
+}
+
+.victory {
+  font-size: 5rem;
+  margin-bottom: auto;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.281);
+}
+.player--active .name {
+  font-weight: 900;
+}
+.player--active .score {
+  font-weight: 700;
+}
+
+.player--active .current {
+  opacity: 2;
+  font-weight: 700;
+}
+
+.current {
+  background-color: #351aac;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 255, 255);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 800;
+  transition: all 0.4s;
+  background-color: #1f1e1e;
+  opacity: 0.7;
+  backdrop-filter: (1%);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn--instruc {
+  top: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.712);
+}
+
+.btn--instruc:hover {
+  transform: translate(-50%, 4px);
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+.link {
+  color: #59e277;
+}
+
+.btn--new {
+  top: 8.8rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.712);
+}
+
+.btn--new:hover {
+  transform: translate(-50%, 4px);
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+.btn--roll {
+  top: 39.3rem;
+  background-color: #5b21c7;
+  opacity: 0.8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.712);
+}
+
+.btn--roll:hover {
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+.btn--hold {
+  top: 46.1rem;
+  background-color: #05c98e;
+  opacity: 0.8;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.712);
+}
+
+.btn--hold:hover {
+  box-shadow: 0 5px 15px rgb(0, 0, 0);
+}
+
+.btn:active {
+  transform: translate(-50%, 20px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 22rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.349);
+}
+
+.player--winner {
+  background-color: #1f1e1e;
+}
+
+.player--winner .name {
+  text-shadow: #50e6a7;
+  font-weight: 900;
+  color: #1ec25d;
+  text-shadow: 0 0.5rem 4rem #1ec25d;
+}
+
+.player--winner .victory {
+  text-shadow: #50e6a7;
+  font-weight: 900;
+  text-shadow: 0 0.5rem 3rem #1ec25d;
+  color: #1ec25d;
+}
+
+.player--winner .score {
+  text-shadow: #50e6a7;
+  text-shadow: 0 0.5rem 4rem #1ec25de5;
+  font-weight: 700;
+  color: #1ec25d;
+}
+
+.player--winner .current {
+  background-color: #1ec25d;
+  box-shadow: 0 1rem 4rem #1ec25d;
+  font-weight: 700;
+}
+
+.hidden {
+  display: none;
+}
+
+/*MODAL CLASSES*/
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 10em 2rem;
+  border: none;
+  background-color: rgb(56, 53, 53);
+  color: #fff;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  font-size: medium;
+  color: rgb(233, 227, 227);
+  background-color: rgb(56, 53, 53);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(7px);
+  z-index: 5;
+}
